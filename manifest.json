@@ -1,17 +1,16 @@
 {
   "name": "Saldo Certo",
   "short_name": "SaldoCerto",
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0d6efd",
   "description": "Aplicativo de controlo financeiro pessoal",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/jcsoficial38-a11y/saldo-certo/main/icon.png",
+      "src": "index.html",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
