@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saldo Certo</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,23 +22,91 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1 {
-            color: #2c3e50;
+            color: #0d6efd;
             text-align: center;
         }
-        .card {
-            background: #eef2f7;
-            padding: 15px;
-            border-radius: 6px;
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0b5ed7;
+        }
+        .balance {
             margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Saldo Certo</h1>
-        <div class="card">
-            <p>O seu aplicativo de controle financeiro está online e a funcionar perfeitamente!</p>
+        <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" placeholder="Ex: Salário, Supermercado...">
+        </div>
+        <div class="form-group">
+            <label for="valor">Valor (€ / R$):</label>
+            <input type="number" id="valor" step="0.01" placeholder="0.00">
+        </div>
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo">
+                <option value="receita">Receita (Entrada)</option>
+                <option value="despesa">Despesa (Saída)</option>
+            </select>
+        </div>
+        <button onclick="adicionarTransacao()">Adicionar</button>
+        
+        <div class="balance">
+            Saldo Atual: <span id="saldoTotal">0.00</span>
         </div>
     </div>
+
+    <script>
+        let saldo = 0;
+        function adicionarTransacao() {
+            const valorInput = document.getElementById('valor');
+            const tipoInput = document.getElementById('tipo').value;
+            const valor = parseFloat(valorInput.value);
+
+            if (isNaN(valor) || valor <= 0) {
+                alert('Por favor, insira um valor válido.');
+                return;
+            }
+
+            if (tipoInput === 'receita') {
+                saldo += valor;
+            } else {
+                saldo -= valor;
+            }
+
+            document.getElementById('saldoTotal').textContent = saldo.toFixed(2);
+            valorInput.value = '';
+        }
+    </script>
 </body>
 </html>
