@@ -8,7 +8,7 @@
   "description": "Aplicativo de controlo financeiro pessoal",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/jcsoficial38-a11y/saldo-certo/main/index.html",
+      "src": "https://raw.githubusercontent.com/jcsoficial38-a11y/saldo-certo/main/icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
