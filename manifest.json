@@ -1,16 +1,17 @@
 {
   "name": "Saldo Certo",
   "short_name": "SaldoCerto",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0d6efd",
   "description": "Aplicativo de controlo financeiro pessoal",
   "icons": [
     {
-      "src": "index.html",
+      "src": "https://images.vexels.com/media/users/3/142784/preview2/658b417c805eb3ebf476a26df0c5ae9d-icone-de-grafico-de-dinheiro.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
